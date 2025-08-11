@@ -1,5 +1,3 @@
-import { Navbar } from "./NavBar";
-
 function Cart() {
   return (
     <>

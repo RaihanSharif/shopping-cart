@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
-import { ShopPage } from "./ShopPage";
-import { Cart } from "./Cart";
+
+//TODO: pass the number of shopping items to the navbar when
+// users add or remove items from the shopping cart
 
 function Navbar() {
   return (
