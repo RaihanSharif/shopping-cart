@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom";
 
-//TODO: pass the number of shopping items to the navbar when
-// users add or remove items from the shopping cart
-
-function Navbar() {
+function Navbar({ itemCount }) {
   return (
     <nav>
       <ul>
@@ -17,6 +14,9 @@ function Navbar() {
           <Link to="/cart">Cart</Link>
         </li>
       </ul>
+      <Link to="cart">
+        <span role="cart-items">cart: {itemCount}</span>
+      </Link>
     </nav>
   );
 }
