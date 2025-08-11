@@ -1,14 +1,9 @@
-import { Navbar } from "./NavBar";
 import { Hero } from "./Hero";
-import { Footer } from "./Footer";
-import { Link } from "react-router-dom";
 import { FeatureCard } from "./FeatureCard";
 
 function Homepage() {
   return (
-    <>
-      <Link to="/shop">Shop</Link>
-      <Link to="/cart">Cart</Link>
+    <main>
       <Hero />
       <FeatureCard
         iconName={"rocket"}
@@ -27,8 +22,7 @@ function Homepage() {
         title={"Value for money"}
         description={"We offer the best bang for your buck."}
       />
-      <Footer />
-    </>
+    </main>
   );
 }
 

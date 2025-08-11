@@ -6,12 +6,11 @@ import { Link } from "react-router-dom";
 function ShopPage() {
   return (
     <>
-      {/* <Navbar /> */}
-      <section>
+      <main>
+        <h1>Our products</h1>
         <ProductCard />
         <Link to="/">Back to home page</Link>
-      </section>
-      <Footer />
+      </main>
     </>
   );
 }

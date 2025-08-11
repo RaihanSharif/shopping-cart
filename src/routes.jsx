@@ -3,11 +3,12 @@ import { Homepage } from "./components/Homepage";
 import { Navbar } from "./components/NavBar";
 import { ShopPage } from "./components/ShopPage";
 import { ErrorPage } from "./components/ErrorPage";
+import { Root } from "./components/Root";
 
 const routes = [
   {
     path: "/",
-    element: <Navbar />,
+    element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
