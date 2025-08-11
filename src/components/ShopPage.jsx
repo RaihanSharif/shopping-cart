@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function ShopPage() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <section>
         <ProductCard />
         <Link to="/">Back to home page</Link>
