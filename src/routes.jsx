@@ -2,12 +2,13 @@ import { Cart } from "./components/Cart";
 import { Homepage } from "./components/Homepage";
 import { Navbar } from "./components/NavBar";
 import { ShopPage } from "./components/ShopPage";
-// TODO: Error page
+import { ErrorPage } from "./components/ErrorPage";
 
 const routes = [
   {
     path: "/",
     element: <Navbar />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
