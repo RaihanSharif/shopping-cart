@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { getByRole, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import { Navbar } from "../src/components/NavBar";
 import { MemoryRouter } from "react-router-dom";

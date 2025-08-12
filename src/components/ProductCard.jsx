@@ -5,7 +5,7 @@ function ProductCard({
   price,
   category,
   rating,
-  quantity,
+  onAddItem,
 }) {
   return (
     <div>
@@ -20,10 +20,10 @@ function ProductCard({
       <div>
         <div>
           <button>-</button>
-          <span>{quantity}</span>
+          <span>1</span>
           <button>+</button>
         </div>
-        <button>Add to cart</button>
+        <button onClick={onAddItem}>Add to cart</button>
       </div>
     </div>
   );

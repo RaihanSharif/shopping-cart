@@ -23,7 +23,6 @@ describe("ProductCard", () => {
         price={300.0}
         category={"men's jacket"}
         rating={3.6}
-        quantity={1}
       />
     );
     screen.debug();

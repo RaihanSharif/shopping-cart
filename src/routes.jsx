@@ -1,6 +1,5 @@
 import { Cart } from "./components/Cart";
 import { Homepage } from "./components/Homepage";
-import { Navbar } from "./components/NavBar";
 import { ShopPage } from "./components/ShopPage";
 import { ErrorPage } from "./components/ErrorPage";
 import { Root } from "./components/Root";
