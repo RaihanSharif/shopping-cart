@@ -2,7 +2,7 @@ function ProductCard({ item, onAddToCart }) {
   return (
     <div>
       <img src={item.image} />
-      <p>{item.title}</p>
+      <h3>{item.title}</h3>
       <div>
         <span>{item.category}</span>
         <span>
