@@ -15,12 +15,12 @@ function ShopPage() {
         <h1>Our products</h1>
         {productList.map((item) => {
           return (
-            <p>
-              {item.id} || {item.title} || {item.price} ||
-            </p>
+            <ProductCard
+              item={item}
+              onAddToCart={() => console.log("add to cart")}
+            />
           );
         })}
-        <ProductCard />
         <Link to="/">Back to home page</Link>
       </main>
     </>

@@ -1,29 +1,23 @@
-function ProductCard({
-  title,
-  description,
-  imageUrl,
-  price,
-  category,
-  rating,
-  onAddItem,
-}) {
+function ProductCard({ item, onAddToCart }) {
   return (
     <div>
-      <img src={imageUrl} />
-      <p>{title}</p>
+      <img src={item.image} />
+      <p>{item.title}</p>
       <div>
-        <span>{category}</span>
-        <span>{rating}</span>
+        <span>{item.category}</span>
+        <span>
+          {item.rating.rate} ({item.rating.count})
+        </span>
       </div>
-      <p>{description}</p>
-      <p>{price}</p>
+      <p>{item.description}</p>
+      <p>Price: £{item.price}</p>
       <div>
         <div>
           <button>-</button>
           <span>1</span>
           <button>+</button>
         </div>
-        <button onClick={onAddItem}>Add to cart</button>
+        <button onClick={onAddToCart}>Add to cart</button>
       </div>
     </div>
   );
