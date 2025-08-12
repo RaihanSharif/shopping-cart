@@ -2,12 +2,10 @@ import { ProductCard } from "./ProductCard";
 import { Link, useOutletContext } from "react-router-dom";
 
 function ShopPage() {
-  const { productList, error, isLoading } = useOutletContext();
+  const { productList, error, isLoading, onAddToCart } = useOutletContext();
 
   if (isLoading) return <p>loading...</p>;
   if (error) return <p>A network error was encountered</p>;
-  console.log("fetching productList");
-  console.log({ ...productList[0] });
 
   return (
     <>
@@ -16,8 +14,9 @@ function ShopPage() {
         {productList.map((item) => {
           return (
             <ProductCard
+              key={item.id}
               item={item}
-              onAddToCart={() => console.log("add to cart")}
+              onAddToCart={() => onAddToCart(item, 1)}
             />
           );
         })}
