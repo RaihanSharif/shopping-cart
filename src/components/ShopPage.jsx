@@ -16,7 +16,7 @@ function ShopPage() {
             <ProductCard
               key={item.id}
               item={item}
-              onAddToCart={() => onAddToCart(item, 1)}
+              onAddToCart={() => onAddToCart(item.id, 1)}
             />
           );
         })}
