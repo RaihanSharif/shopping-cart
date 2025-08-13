@@ -13,7 +13,7 @@ function ProductCard({ item, onAddToCart }) {
       <p>Price: £{item.price}</p>
       <div>
         <form onSubmit={onAddToCart}>
-          <input name="quantity" type="number" defaultValue={1}></input>
+          <input name="quantity" type="number" defaultValue={1} min={1}></input>
           <button typ="submit">Add to Cart</button>
         </form>
       </div>
