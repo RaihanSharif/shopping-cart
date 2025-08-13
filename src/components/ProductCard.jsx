@@ -12,12 +12,10 @@ function ProductCard({ item, onAddToCart }) {
       <p>{item.description}</p>
       <p>Price: £{item.price}</p>
       <div>
-        <div>
-          <button>-</button>
-          <span>1</span>
-          <button>+</button>
-        </div>
-        <button onClick={() => onAddToCart(item.id, 1)}>Add to cart</button>
+        <form onSubmit={onAddToCart}>
+          <input name="quantity" type="number" defaultValue={1}></input>
+          <button typ="submit">Add to Cart</button>
+        </form>
       </div>
     </div>
   );
