@@ -10,6 +10,10 @@ function ShopPage() {
     event.preventDefault();
     const formData = new FormData(event.target);
     const quantityToAdd = parseInt(formData.get("quantity"));
+    if (quantityToAdd <= 0) {
+      alert("naughty naughty!");
+      throw new Error("can't add negative number of items");
+    }
     console.log(quantityToAdd);
     setSelectedItems((draft) => {
       const temp = draft.find((item) => item.id === productId);
