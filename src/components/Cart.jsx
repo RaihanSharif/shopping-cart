@@ -1,8 +1,17 @@
+import { useOutletContext } from "react-router-dom";
+
 function Cart() {
+  const { porductList, selectedItems, setSelectedItems } = useOutletContext();
   return (
     <>
       <main>
-        <h1>Your shopping cart</h1>
+        {selectedItems.map((item) => {
+          return (
+            <p>
+              item ID: {item.id} || count: {item.count}
+            </p>
+          );
+        })}
       </main>
     </>
   );
