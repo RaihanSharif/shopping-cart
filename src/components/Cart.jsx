@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import { CartProductCart } from "./CartProductCard";
 
 function Cart() {
-  const { productList, selectedItems } = useOutletContext();
+  const { productList, selectedItems, setSelectedItems } = useOutletContext();
   let cartItemSummary = null;
 
   // populate the cartItemSummary with {product: {product}, count: int, price: float(count * product price)}
@@ -17,6 +17,11 @@ function Cart() {
     });
   }
   cartItemSummary = generateCartSummary();
+
+  function onDeleteFromCart(itemId) {
+    setSelectedItems((prev) => prev.filter((item) => item.id !== itemId));
+  }
+
   return (
     <>
       <main>
@@ -27,7 +32,7 @@ function Cart() {
               product={element.product}
               count={element.count}
               totalPrice={element.totalPrice}
-              onDelete={() => console.log("deleting product")}
+              onDelete={() => onDeleteFromCart(element.product.id)}
             />
           );
         })}

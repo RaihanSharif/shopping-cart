@@ -12,9 +12,10 @@ function itemsInCartCount(selectedItems) {
 }
 
 function Root() {
-  const [selectedItems, setSelectedItems] = useImmer([]);
+  const [selectedItems, setSelectedItems] = useImmer([]); //[{id: int, count: int}]
   const { productList, error, isLoading } = useProductFetch();
 
+  // TODO: Question for review: should I move this to the shop component?
   function onAddToCart(productId, countToAdd) {
     setSelectedItems((draft) => {
       const temp = draft.find((item) => item.id === productId);
