@@ -25,7 +25,7 @@ function Root() {
       }
     });
   }
-  console.log(selectedItems);
+  console.log([...selectedItems]);
 
   return (
     <>
