@@ -3,7 +3,14 @@
 // has buttons to remove the item(s) from cart
 // Optionally increase or decrease the number of products in the basket
 
-function CartProductCart({ product, count, totalPrice, onDelete }) {
+function CartProductCart({
+  product,
+  count,
+  totalPrice,
+  onDelete,
+  onDecrement,
+  onIncrement,
+}) {
   return (
     <div>
       <img src={product.image} />
@@ -11,7 +18,9 @@ function CartProductCart({ product, count, totalPrice, onDelete }) {
       <p>£{product.price}</p>
       <span>Quantity: {count}</span>
       <p>Total: £{totalPrice}</p>
-      <button onClick={onDelete}>Remove from Cart</button>
+      <button onClick={onDecrement}>-</button>
+      <button onClick={onIncrement}>+</button>
+      <button onClick={onDelete}>Remove All</button>
     </div>
   );
 }
