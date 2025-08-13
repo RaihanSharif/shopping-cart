@@ -17,7 +17,7 @@ function CartProductCart({
       <p>{product.title}</p>
       <p>£{product.price}</p>
       <span>Quantity: {count}</span>
-      <p>Total: £{totalPrice}</p>
+      <p>Total: £{totalPrice.toFixed(2)}</p>
       <button onClick={onDecrement}>-</button>
       <button onClick={onIncrement}>+</button>
       <button onClick={onDelete}>Remove All</button>

@@ -5,7 +5,7 @@ function Cart() {
   const { productList, selectedItems, setSelectedItems } = useOutletContext();
   let cartItemSummary = null;
 
-  // populate the cartItemSummary with {product: {product}, count: int, price: float(count * product price)}
+  // populate the cartItemSummary with {product: {product}, count: int, totalPrice: float(count * product price)}
   function generateCartSummary() {
     return selectedItems.map((cartItem) => {
       const itemObj = productList.find((item) => item.id === cartItem.id);
@@ -17,6 +17,14 @@ function Cart() {
     });
   }
   cartItemSummary = generateCartSummary();
+
+  function getTotal() {
+    return cartItemSummary.reduce((accumulator, current) => {
+      return accumulator + current.totalPrice;
+    }, 0);
+  }
+
+  const total = getTotal();
 
   function onDeleteItemFromCart(itemId) {
     setSelectedItems((prev) => prev.filter((item) => item.id !== itemId));
@@ -44,19 +52,28 @@ function Cart() {
     <>
       <main>
         <h1>Your cart</h1>
-        {cartItemSummary.map((element) => {
-          return (
-            <CartProductCart
-              key={element.product.id}
-              product={element.product}
-              count={element.count}
-              totalPrice={element.totalPrice}
-              onDelete={() => onDeleteItemFromCart(element.product.id)}
-              onDecrement={() => onDecrementItem(element.product.id)}
-              onIncrement={() => onIncrement(element.product.id)}
-            />
-          );
-        })}
+        <section>
+          {cartItemSummary.map((element) => {
+            return (
+              <CartProductCart
+                key={element.product.id}
+                product={element.product}
+                count={element.count}
+                totalPrice={element.totalPrice}
+                onDelete={() => onDeleteItemFromCart(element.product.id)}
+                onDecrement={() => onDecrementItem(element.product.id)}
+                onIncrement={() => onIncrement(element.product.id)}
+              />
+            );
+          })}
+        </section>
+        <section>
+          <h3>Order Summary</h3>
+          <p>Subtotal: £{(total - total * 0.2).toFixed(2)}</p>
+          <p>Tax: £{(total * 0.2).toFixed(2)}</p>
+          <p>Total: £{total.toFixed(2)}</p>
+          <button>Proceed to Checkout</button>
+        </section>
       </main>
     </>
   );
