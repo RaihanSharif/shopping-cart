@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { Navbar } from "./NavBar";
 import { Footer } from "./Footer";
+import styles from "./root.module.css";
 
 import { useImmer } from "use-immer";
 import { useProductFetch } from "./useProductFetch";
@@ -17,7 +18,7 @@ function Root() {
 
   return (
     <>
-      <header>
+      <header className={styles.header}>
         <Navbar itemCount={numOfItemsInCart(selectedItems)} />
       </header>
       <Outlet
