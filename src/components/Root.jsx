@@ -5,7 +5,7 @@ import { Footer } from "./Footer";
 import { useImmer } from "use-immer";
 import { useProductFetch } from "./useProductFetch";
 
-function itemsInCartCount(selectedItems) {
+function numOfItemsInCart(selectedItems) {
   return selectedItems.reduce((accumulator, current) => {
     return accumulator + current.count;
   }, 0);
@@ -15,23 +15,10 @@ function Root() {
   const [selectedItems, setSelectedItems] = useImmer([]); //[{id: int, count: int}]
   const { productList, error, isLoading } = useProductFetch();
 
-  // TODO: Question for review: should I move this to the shop component?
-  function onAddToCart(productId, countToAdd) {
-    setSelectedItems((draft) => {
-      const temp = draft.find((item) => item.id === productId);
-      if (!temp) {
-        draft.push({ id: productId, count: countToAdd });
-      } else {
-        temp.count = temp.count += countToAdd;
-      }
-    });
-  }
-  console.log([...selectedItems]);
-
   return (
     <>
       <header>
-        <Navbar itemCount={itemsInCartCount(selectedItems)} />
+        <Navbar itemCount={numOfItemsInCart(selectedItems)} />
       </header>
       <Outlet
         context={{
@@ -40,7 +27,6 @@ function Root() {
           productList,
           error,
           isLoading,
-          onAddToCart,
         }}
       />
       <Footer />

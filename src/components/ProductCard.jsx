@@ -17,7 +17,7 @@ function ProductCard({ item, onAddToCart }) {
           <span>1</span>
           <button>+</button>
         </div>
-        <button onClick={onAddToCart}>Add to cart</button>
+        <button onClick={() => onAddToCart(item.id, 1)}>Add to cart</button>
       </div>
     </div>
   );
