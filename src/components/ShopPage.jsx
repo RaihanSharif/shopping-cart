@@ -26,11 +26,7 @@ function ShopPage() {
         <h1>Our products</h1>
         {productList.map((item) => {
           return (
-            <ProductCard
-              key={item.id}
-              item={item}
-              onAddToCart={() => onAddToCart(item.id, 1)}
-            />
+            <ProductCard key={item.id} item={item} onAddToCart={onAddToCart} />
           );
         })}
         <Link to="/">Back to home page</Link>
