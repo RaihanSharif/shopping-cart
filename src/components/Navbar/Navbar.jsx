@@ -1,12 +1,18 @@
 import { Link } from "react-router-dom";
-import "./navbar.module.css";
+import styles from "./navbar.module.css";
 
 function Navbar({ itemCount }) {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/shop">Shop</Link>
-      <Link to="cart">cart: {itemCount}</Link>
+    <nav className={styles.nav}>
+      <Link className={styles.navBtn} to="/">
+        Home
+      </Link>
+      <Link className={styles.navBtn} to="/shop">
+        Shop
+      </Link>
+      <Link className={styles.navBtn} to="cart">
+        cart: {itemCount}
+      </Link>
     </nav>
   );
 }

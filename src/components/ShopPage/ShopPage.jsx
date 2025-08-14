@@ -1,6 +1,8 @@
 import { ProductCard } from "../ProductCard/ProductCard";
 import { Link, useOutletContext } from "react-router-dom";
 
+import styles from "./shopPage.module.css";
+
 function ShopPage() {
   const { productList, error, isLoading, setSelectedItems } =
     useOutletContext();
@@ -32,17 +34,18 @@ function ShopPage() {
   return (
     <>
       <main>
-        <h1>Our products</h1>
-        {productList.map((item) => {
-          return (
-            <ProductCard
-              key={item.id}
-              item={item}
-              onAddToCart={(e) => onAddToCart(item.id, e)}
-            />
-          );
-        })}
-        <Link to="/">Back to home page</Link>
+        <h1 className={styles.title}>Our products</h1>
+        <div className={styles.cardContainer}>
+          {productList.map((item) => {
+            return (
+              <ProductCard
+                key={item.id}
+                item={item}
+                onAddToCart={(e) => onAddToCart(item.id, e)}
+              />
+            );
+          })}
+        </div>
       </main>
     </>
   );

@@ -1,0 +1,29 @@
+.hero {
+  composes: lightBlueBg from "../colors.module.css";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.ctaBtn {
+  composes: specialBtnBg from "../colors.module.css";
+  display: flex;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  color: black;
+  border-radius: 5px;
+}
+
+.ctaBtn:hover {
+  box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 3px 4px 5px 0px rgba(0, 0, 0, 0.75);
+}

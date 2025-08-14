@@ -1,0 +1,9 @@
+.title {
+  text-align: center;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 400px));
+  place-content: center;
+}

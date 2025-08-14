@@ -1,0 +1,14 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  /* padding: 2rem 2rem; */
+  gap: 1rem;
+}
+
+.features {
+  display: flex;
+  place-content: center;
+  gap: 3rem;
+  padding: 2rem;
+  margin: 2rem;
+}
