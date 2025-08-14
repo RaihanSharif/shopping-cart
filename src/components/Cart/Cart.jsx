@@ -1,5 +1,5 @@
 import { useOutletContext } from "react-router-dom";
-import { CartProductCart } from "./CartProductCard";
+import { CartProductCart } from "../CartProductCard/CartProductCard";
 
 function Cart() {
   const { productList, selectedItems, setSelectedItems } = useOutletContext();

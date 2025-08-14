@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import { Navbar } from "./NavBar";
-import { Footer } from "./Footer";
+import { Navbar } from "../Navbar/Navbar";
+import { Footer } from "../Footer/Footer";
 import styles from "./root.module.css";
 
 import { useImmer } from "use-immer";
-import { useProductFetch } from "./useProductFetch";
+import { useProductFetch } from "../useProductFetch";
 
 function numOfItemsInCart(selectedItems) {
   return selectedItems.reduce((accumulator, current) => {

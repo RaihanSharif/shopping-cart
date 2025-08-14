@@ -1,8 +1,8 @@
-import { Cart } from "./components/Cart";
-import { Homepage } from "./components/Homepage";
-import { ShopPage } from "./components/ShopPage";
-import { ErrorPage } from "./components/ErrorPage";
-import { Root } from "./components/Root";
+import { Cart } from "./components/Cart/Cart";
+import { Homepage } from "./components/Homepage/Homepage";
+import { ShopPage } from "./components/ShopPage/ShopPage";
+import { ErrorPage } from "./components/ErrorPage/ErrorPage";
+import { Root } from "./components/Root/Root";
 
 const routes = [
   {

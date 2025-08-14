@@ -1,5 +1,5 @@
-import { Hero } from "./Hero";
-import { FeatureCard } from "./FeatureCard";
+import { Hero } from "../Hero/Hero";
+import { FeatureCard } from "../FeatureCard/FeatureCard";
 
 function Homepage() {
   return (

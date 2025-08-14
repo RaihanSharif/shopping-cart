@@ -8,7 +8,9 @@ function Hero() {
         Quality products. Affordable prices. From eletronics to fashion. Your
         every day needs all in one place.
       </p>
-      <Link to={"shop"}>Start shopping</Link>
+      <div>
+        <Link to={"shop"}>Start shopping</Link>
+      </div>
     </div>
   );
 }
