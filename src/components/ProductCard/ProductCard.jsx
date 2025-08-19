@@ -1,9 +1,5 @@
 import styles from "./productCard.module.css";
 
-function truncate(str, maxlength) {
-  return str.length > maxlength ? str.slice(0, maxlength - 1) + "…" : str;
-}
-
 function ProductCard({ item, onAddToCart }) {
   return (
     <div className={styles.card}>
@@ -18,7 +14,7 @@ function ProductCard({ item, onAddToCart }) {
             {item.rating.rate} ({item.rating.count})
           </span>
         </div>
-        <p>{truncate(item.description, 150)}</p>
+        {/* <p>{truncate(item.description, 150)}</p> */}
         <p>Price: £{item.price}</p>
         <div>
           <form className={styles.form} onSubmit={onAddToCart}>
